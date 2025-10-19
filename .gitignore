@@ -1,5 +1,6 @@
 node_modules/
-dist/
 coverage/
 .vscode/
 .DS_Store
+
+# Note: dist/ is included for GitHub Pages deployment
