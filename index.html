@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dragonrealms</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Dragonrealms</h1>
+      <p>Create and manage your dragon collection.</p>
+    </header>
+
+    <main class="layout">
+      <section class="card form-card" aria-labelledby="dragon-form-heading">
+        <h2 id="dragon-form-heading">New Dragon</h2>
+        <form id="dragon-form" novalidate>
+          <div class="field">
+            <label for="dragon-name">Name</label>
+            <input id="dragon-name" name="name" type="text" required minlength="2" maxlength="30" />
+            <p class="field-error" data-error-for="dragon-name"></p>
+          </div>
+
+          <div class="field">
+            <label for="dragon-type">Type</label>
+            <select id="dragon-type" name="type" required>
+              <option value="">Select type</option>
+              <option value="Fire">Fire</option>
+              <option value="Ice">Ice</option>
+              <option value="Earth">Earth</option>
+              <option value="Wind">Wind</option>
+              <option value="Lightning">Lightning</option>
+              <option value="Shadow">Shadow</option>
+            </select>
+            <p class="field-error" data-error-for="dragon-type"></p>
+          </div>
+
+          <div class="field">
+            <label for="dragon-age">Age (years)</label>
+            <input id="dragon-age" name="age" type="number" required min="1" max="1000" />
+            <p class="field-error" data-error-for="dragon-age"></p>
+          </div>
+
+          <div class="field">
+            <label for="dragon-power">Power Level</label>
+            <input id="dragon-power" name="powerLevel" type="range" min="1" max="100" value="50" />
+            <output id="dragon-power-output" for="dragon-power">50</output>
+          </div>
+
+          <div class="field">
+            <label for="dragon-abilities">Special Abilities</label>
+            <textarea id="dragon-abilities" name="specialAbilities" maxlength="200"></textarea>
+            <p class="field-error" data-error-for="dragon-abilities"></p>
+          </div>
+
+          <button type="submit">Create Dragon</button>
+        </form>
+      </section>
+
+      <section class="card list-card" aria-labelledby="dragon-list-heading">
+        <h2 id="dragon-list-heading">Dragon Stable</h2>
+        <div id="dragon-list" class="dragon-list" role="list"></div>
+      </section>
+    </main>
+
+    <template id="dragon-card-template">
+      <article class="dragon-card" role="listitem">
+        <header>
+          <h3 class="dragon-name"></h3>
+          <p class="dragon-meta"></p>
+        </header>
+        <p class="dragon-abilities"></p>
+        <footer class="dragon-actions">
+          <button data-action="attack" type="button">Attack</button>
+          <button data-action="roar" type="button">Roar</button>
+          <button data-action="edit" type="button">Edit</button>
+          <button data-action="delete" type="button">Delete</button>
+        </footer>
+      </article>
+    </template>
+
+    <script type="module" src="./dist/app.js"></script>
+  </body>
+</html>

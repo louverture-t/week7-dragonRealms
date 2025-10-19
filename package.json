@@ -1,0 +1,19 @@
+{
+  "name": "dragonrealms-capstone",
+  "version": "1.0.0",
+  "description": "Scaffold for the Dragonrealms TypeScript capstone (frontend-only)",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "start": "npm run build && npx serve -s . -p 8080",
+    "preview": "npm run build && start index.html"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^3.2.4",
+    "jsdom": "^27.0.1",
+    "serve": "^14.2.1",
+    "typescript": "^5.0.0",
+    "vitest": "^3.2.4"
+  }
+}
